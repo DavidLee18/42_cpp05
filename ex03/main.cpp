@@ -32,7 +32,6 @@ int main() {
     for (size_t i = 0; i < 5; i++) {
       std::cout << "RobotomyRequestForm #" << (i + 1) << ": " << std::endl;
       jane.executeForm(*form2);
-      sleep(1);
     }
     std::cout << "PresidentialPardonForm: " << std::endl;
     form3 = mark.makeForm("presidential pardon", "John Walker");

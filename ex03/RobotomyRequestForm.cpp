@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <unistd.h>
 
 RobotomyRequestForm::RobotomyRequestForm()
     : AForm("RobotomyRequestForm", 72, 45, "John Doe") {}
@@ -20,6 +21,8 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 void RobotomyRequestForm::execute(Bureaucrat const &br) const
     throw(AForm::GradeTooLowException, AForm::NotSignedException) {
   validate_exec(br);
+  std::cout << "wWWWWWWZZZZZZZZZZZZZZZZZZZZ..." << std::endl;
+  sleep(1);
   std::srand(static_cast<unsigned int>(std::time(NULL)));
   if (std::rand() % 2 == 0)
     std::cout << "FAILED to robotomize " << getTarget() << std::endl;
